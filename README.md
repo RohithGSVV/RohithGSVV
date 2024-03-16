@@ -1,5 +1,5 @@
 <div align="center">
-    <h1>Hello, I'm Rohith! 👋 <img src="https://raw.githubusercontent.com/rohit-wadhwa/rohit-wadhwa/master/images/Hi.gif" width="30px"></h1>
+    <h1>Hello, I'm Rohith! <img src="https://raw.githubusercontent.com/rohit-wadhwa/rohit-wadhwa/master/images/Hi.gif" width="30px"></h1>
 </div>
 
 <h3 align="center">Interested in : Data Science | Machine Learning | Software Development </h3>
