@@ -1,8 +1,15 @@
 name: Update Technology Pie Chart
 
 on:
-  schedule:
-    - cron: '0 0 * * *'  # Runs at midnight every day
+    workflow_dispatch:  # Allows manual triggers without additional parameters
+    push:
+      branches:
+        - main
+    pull_request:
+      branches:
+        - main
+    schedule:
+      - cron: '0 0 * * *'  # Runs at midnight every day
 
 jobs:
   update-pie-chart:
