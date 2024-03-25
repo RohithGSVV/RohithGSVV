@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 tech_categories = {
     'Data Science': ['numpy', 'pandas', 'matplotlib', 'scipy', 'sklearn'],
     'Machine Learning': ['keras', 'tensorflow', 'pytorch', 'scikit-learn'],
-    'Web Development': ['flask', 'django'],
+    'Web Development': ['flask', 'django', 'selenium'],
 }
 
 def extract_libraries(filepath):
@@ -32,7 +32,7 @@ def categorize_libraries(libs):
                 break
     return category_counts
 
-def generate_pie_chart(counts, filename='../../add-ons/pie_chart.png'):
+def generate_pie_chart(counts, filename='add-ons/pie_chart.png'):
     labels = counts.keys()
     sizes = counts.values()
     plt.figure(figsize=(8, 8))
