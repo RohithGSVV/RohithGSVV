@@ -32,10 +32,16 @@ jobs:
       - name: Extract technologies and generate pie chart
         run: python .github/scripts/extract_and_visualize.py
 
-      - name: Commit and push if changes
+      - name: Setup Git Identity
         run: |
           git config --global user.email "rohithganni79@gmail.com"
           git config --global user.name "RohithGSVV"
-          git add README.md add-ons/pie_chart.png  # Adapt paths as needed
-          git commit -m "Update technology pie chart" || exit 0  # Skip if no changes
+
+      - name: Commit and Push Changes
+        env:
+          MY_GITHUB_TOKEN: ${{ secrets.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 }}
+        run: |
+          git add README.md add-ons/pie_chart.png
+          git commit -m "Update technology pie chart" || exit 0  # Exit gracefully if no changes
+          git remote set-url origin https://x-access-token:${MY_GITHUB_TOKEN}@github.com/RohithGSVV/RohithGSVV.git
           git push
