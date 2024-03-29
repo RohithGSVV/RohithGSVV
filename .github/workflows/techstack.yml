@@ -36,6 +36,7 @@ jobs:
         run: |
           git config --global user.email "rohithganni79@gmail.com"
           git config --global user.name "RohithGSVV"
+          git status
           git add README.md add-ons/pie_chart.png  # Adapt paths as needed
           git commit -m "Update technology pie chart" || exit 0  # Skip if no changes
           git push
