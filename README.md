@@ -10,7 +10,7 @@
 🔭 Working on **VR StorySphere - VR based Storytelling App**<br>🧑‍🎓 Currently pursuing **Master's in Data Science and Analytics**
 
 
-# 💻 Tool Box:
+#  🔧Tool Box:
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white)  ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
@@ -31,7 +31,7 @@
   <img src="https://github.com/RohithGSVV/RohithGSVV/blob/main/add-ons/leetcode.svg?raw=true" width="50" height="25" alt="LeetCode">
 </a>
 
-## Certifications
+## 🎓 Certifications
 
 Proudly acquired certifications that underscore my expertise:
 
@@ -41,7 +41,7 @@ Proudly acquired certifications that underscore my expertise:
     </td>
     <td valign="top" width="50%">
 
-### Technologies Used
+## 💻 Technologies Used
 
 ![Technologies Used](./add-ons/pie_chart.png)
 
