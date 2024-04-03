@@ -5,39 +5,67 @@ from collections import defaultdict
 import matplotlib.pyplot as plt
 
 tech_categories = {
-    'Data Science': ['numpy', 'pandas', 'matplotlib', 'scipy', 'sklearn'],
-    'Machine Learning': ['keras', 'tensorflow', 'pytorch', 'scikit-learn'],
-    'Web Development': ['flask', 'django', 'selenium'],
+    'Data Science': ['numpy', 'pandas', 'matplotlib', 'scipy', 'seaborn', 'statsmodels', 'resample', 'ParameterGrid', 'CoherenceModel', 'Dictionary', 'Sparse2Corpus'],
+    'Machine Learning': ['keras', 'tensorflow', 'pytorch', 'sklearn', 'lightgbm', 'xgboost', 'CountVectorizer', 'LatentDirichletAllocation', 'GridSearchCV', 'BaseEstimator', 'KNNImputer'],
+    'Deep Learning': ['tensorflow', 'keras', 'pytorch', 'fastai'],
+    'Natural Language Processing': ['nltk', 'spacy', 'gensim', 'transformers', 'stopwords', 'WordNetLemmatizer', 'word_tokenize', 'sent_tokenize'],
+    'Computer Vision': ['opencv', 'pillow', 'scikit-image'],
+    'Web Development': ['flask', 'django', 'selenium', 'fastapi', 'tornado'],
+    'Automation': ['selenium', 'pyautogui', 'scrapy', 'os', 'time'],
+    'Data Visualization': ['matplotlib', 'seaborn', 'plotly', 'bokeh', 'ggplot', 'wordcloud'],
+    'API Development': ['flask-restful', 'django-rest-framework', 'fastapi'],
+    'Network Programming': ['socket', 'scapy', 'twisted'],
+    'Game Development': ['pygame', 'panda3d', 'arcade'],
+    'Desktop Application Development': ['tkinter', 'pyqt', 'wxpython'],
+    'Programming Fundamentals': ['re', 'string', 'unicodedata', 'ast'],
+    'Big Data': ['bigquery'],
+    'Topic Modeling and Text Analysis': ['bertopic', 'LatentDirichletAllocation', 'CoherenceModel', 'CountVectorizer']
 }
 
 def extract_libraries(filepath):
-    with open(filepath, 'r') as file:
-        data = json.load(file)
-        libraries = []
-        for cell in data.get('cells', []):
-            if cell['cell_type'] == 'code':
-                code = ''.join(cell['source'])
-                matches = re.findall(r'import (\w+)|from (\w+) import', code)
-                for match in matches:
-                    lib = match[0] if match[0] else match[1]
-                    libraries.append(lib)
-        return libraries
+    try:
+        with open(filepath, 'r', encoding='utf-8', errors='replace') as file:
+            data = json.load(file)
+            libraries = []
+            for cell in data.get('cells', []):
+                if cell['cell_type'] == 'code':
+                    code = ''.join(cell['source'])
+                    matches = re.findall(r'import (\w+)|from (\w+) import', code)
+                    for match in matches:
+                        lib = match[0] if match[0] else match[1]
+                        libraries.append(lib)
+            return libraries
+    except UnicodeDecodeError as e:
+        print(f"Error reading {filepath}: {e}")
+        return []
 
 def categorize_libraries(libs):
     category_counts = defaultdict(int)
     for lib in libs:
+        found = False
         for category, library_list in tech_categories.items():
             if lib in library_list:
                 category_counts[category] += 1
-                break
+                found = True
+        if not found:
+            category_counts['Other'] += 1
     return category_counts
 
 def generate_pie_chart(counts, filename='add-ons/pie_chart.png'):
     labels = counts.keys()
     sizes = counts.values()
-    plt.figure(figsize=(8, 8))
-    plt.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=90)
+    colors = ['#ff9999','#66b3ff','#99ff99','#ffcc99','#c2c2f0','#ffb3e6', '#c4e17f', '#76d7c4', '#f7c6c7', '#f7c6c7', '#d1f2a5']
+    explode = (0.1,) * len(labels)
+
+    plt.figure(figsize=(10, 8))
+    plt.pie(sizes, explode=explode, labels=labels, colors=colors, autopct='%1.1f%%', startangle=140, pctdistance=0.85)
+
+    centre_circle = plt.Circle((0,0),0.50,fc='white')
+    fig = plt.gcf()
+    fig.gca().add_artist(centre_circle)
+
     plt.axis('equal')
+    plt.title('Technology Usage Distribution', pad=20)
     plt.savefig(filename)
 
 def main():
