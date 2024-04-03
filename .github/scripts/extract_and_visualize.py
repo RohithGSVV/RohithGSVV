@@ -54,19 +54,29 @@ def categorize_libraries(libs):
 def generate_pie_chart(counts, filename='add-ons/pie_chart.png'):
     labels = counts.keys()
     sizes = counts.values()
-    colors = ['#ff9999','#66b3ff','#99ff99','#ffcc99','#c2c2f0','#ffb3e6', '#c4e17f', '#76d7c4', '#f7c6c7', '#f7c6c7', '#d1f2a5']
+    colors = ['#ff9999', '#66b3ff', '#99ff99', '#ffcc99', '#c2c2f0', '#ffb3e6', '#c4e17f', '#76d7c4', '#f7c6c7', '#f7c6c7', '#d1f2a5']
     explode = (0.1,) * len(labels)
 
     plt.figure(figsize=(10, 8))
-    plt.pie(sizes, explode=explode, labels=labels, colors=colors, autopct='%1.1f%%', startangle=140, pctdistance=0.85)
+    plt.gcf().set_facecolor('#333333')
+    plt.rcParams.update({
+        "text.color": "white",
+        "axes.facecolor": "#333333",
+        "axes.edgecolor": "white",
+        "axes.labelcolor": "white",
+        "xtick.color": "white",
+        "ytick.color": "white",
+        "figure.facecolor": "#333333",
+        "figure.edgecolor": "#333333",
+        "savefig.facecolor": "#333333",
+        "savefig.edgecolor": "#333333"
+    })
 
-    centre_circle = plt.Circle((0,0),0.50,fc='white')
-    fig = plt.gcf()
-    fig.gca().add_artist(centre_circle)
+    plt.pie(sizes, explode=explode, labels=labels, colors=colors, autopct='%1.1f%%', startangle=140, pctdistance=0.85, textprops={'color':"white"})
 
     plt.axis('equal')
-    plt.title('Technology Usage Distribution', pad=20)
-    plt.savefig(filename)
+    plt.title('Technology Usage Distribution', pad=20, color='white')
+    plt.savefig(filename, transparent=True)
 
 def main():
     all_libs = []
