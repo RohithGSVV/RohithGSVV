@@ -35,7 +35,7 @@
   <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/RohithGSVV/RohithGSVV/output/github-contribution-grid-snake.svg">
 </picture>
 
-![Technologies](./add-ons/technology_pie_chart.png)
+![Technologies](./add-ons/pie_chart.png)
 
 ## 🏆 GitHub Trophies
 ![](https://github-profile-trophy.vercel.app/?username=RohithGSVV&theme=radical&no-frame=false&no-bg=true&margin-w=4)
