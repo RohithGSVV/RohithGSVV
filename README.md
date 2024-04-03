@@ -31,7 +31,7 @@
   <img src="https://github.com/RohithGSVV/RohithGSVV/blob/main/add-ons/leetcode.svg?raw=true" width="50" height="25" alt="LeetCode">
 </a>
 
-### Certifications
+## Certifications
 
 Proudly acquired certifications that underscore my expertise:
 
