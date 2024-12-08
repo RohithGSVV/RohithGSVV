@@ -31,12 +31,20 @@
   <img src="https://github.com/RohithGSVV/RohithGSVV/blob/main/add-ons/leetcode.svg?raw=true" width="50" height="25" alt="LeetCode">
 </a>
 
-## 🎓 Certifications
+## 🎓 Certifications & Awards
 
-Proudly acquired certifications that underscore my expertise:
+Certifications and accolades that underscore my expertise:
 
-- Microsoft Certified: Power BI Data Analyst Associate
-- Certified SAFe5 Practitioner
+### 📚 Certifications
+
+- [**Microsoft Certified:** Power BI Data Analyst Associate](https://learn.microsoft.com/api/credentials/share/en-us/rohithganni-6821/3E4EB5502A1D326C?sharingId=8D4EAD667F57EA5C)
+- [**Microsoft Certified:** Azure AI Engineer Associate](https://learn.microsoft.com/en-us/users/rohithganni-6821/credentials/48678e082f2ab2e8)
+- [**Certified SAFe® 5 Practitioner**](https://www.credly.com/badges/c27fddad-cae8-4052-a203-d8855a6976c0?source=linked_in_profile)
+
+### 🏅 Awards
+
+- [**Runners-Up:** INFORMS Analytical Conference 2024](https://www.linkedin.com/posts/rohith-ganni_informsanalyticsconference-datascience-research-activity-7186863156432928768-Sia9/?utm_source=share&utm_medium=member_desktop)
+- [**Runners-Up:** TAG Data Science & AI Summit](https://www.linkedin.com/feed/update/urn:li:activity:7254222600736837632/)
 
     </td>
     <td valign="top" width="50%">
